@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Details Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <label for="countryInput">Enter your country:</label>
+    <input type="text" id="countryInput"/>
+    <button id="validateCountryButton">Display Country </button>
+    <P id="countryValidation"></P>
+
+
+    <label for="websiteInput">Enter a website name:</label>
+    <input type="text" id="websiteInput"/>
+    <button id="validateWebsiteButton">Display Heading </button>
+    <P id="websiteValidation"></P>
+
+    <label for="studentInput">Are you a student?</label>
+    <input type="text" id="studentInput"/>
+    <button id="validateStudentButton">Display Response </button>
+    <P id="studentValidation"></P>
+
+    <label for="ageInput">Enter your age:</label>
+    <input type="number" id="ageInput"/>
+    <button id="validateButton">Check Age</button>
+    <p id="messages"></p>
+
+    <script>
+
+const countryInput = document.getElementById("countryInput")
+      const validateCountryButton = document.getElementById("validateCountryButton")
+      const countryValidation = document.getElementById("countryValidation")
+
+      
+      
+      //What you want to do with the dom element
+    validateCountryButton.addEventListener("click",function(){
+         const countryName = countryInput.value
+         countryValidation.textContent = `Your country is: ${countryName}`
+      })
+
+
+
+
+      const websiteInput = document.getElementById("websiteInput")
+      const validateWebsiteButton = document.getElementById("validateWebsiteButton")
+      const websiteValidation = document.getElementById("websiteValidation")
+
+      
+      
+      //What you want to do with the dom element
+    validateWebsiteButton.addEventListener("click",function(){
+         const websiteName = websiteInput.value
+         websiteValidation.innerHTML = `<strong>${websiteName}</strong>`
+      })
+
+
+      const studentInput = document.getElementById("studentInput")
+      const validateStudentButton = document.getElementById("validateStudentButton")
+      const studentValidation = document.getElementById("studentValidation")
+
+      
+      
+      //What you want to do with the dom element
+    validateStudentButton.addEventListener("click",function(){
+      const userInput = studentInput.value
+            if (userInput === "yes" ) {
+              studentValidation.textContent = "You are a student.";
+            } else if (userInput === "YES" ) {
+              studentValidation.textContent = "You are a student.";
+            } 
+            else if (userInput === "no") {
+              studentValidation.textContent = "You are not a student.";
+            }  else if (userInput === "NO" ) {
+              studentValidation.textContent = "You are not a student.";
+            } else {
+              studentValidation.textContent = "Invalid response!";
+            }
+        
+      })
+            const ageInput = document.getElementById('ageInput')  
+            const validateButton = document.getElementById('validateButton');
+            const messages = document.getElementById('messages');
+
+            validateButton.addEventListener("click",function(){
+              const age = ageInput.value 
+
+              if (age > 18 && age < 100) {
+                messages.textContent = ` You are an adult.`;
+            } else {
+                messages.textContent = ` You are minor.`;
+            }
+        })
+    </script>
+    
+  </body>
+</html>
